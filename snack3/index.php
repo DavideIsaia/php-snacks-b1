@@ -53,12 +53,12 @@
   ?>
   <ul>
     <?php
-    for ($i = 0; $i < count($posts); $i++) {
-      $current_date = $posts[$i];?>
-      <li><h2>Post pubblicati il <?php echo $current_date; ?></h2></li>
+    for ($i = 0; $i < count(array_keys($posts)); $i++) {
+      $current_date = array_keys($posts)[$i];?>
+      <li><h2>Post pubblicati il <?php echo $current_date; ?></h2></li> 
       <?php
-      for ($j = 0; $j < count($current_date); $j++) {
-        $current_post = $current_date[$i];
+      for ($j = 0; $j < count($posts[$current_date]); $j++) {
+        $current_post = $posts[$current_date][$j];
     ?>
         <li>
           <h3><?php echo $current_post['title']; ?></h3>
