@@ -54,18 +54,22 @@
   <ul>
     <?php
     for ($i = 0; $i < count(array_keys($posts)); $i++) {
-      $current_date = array_keys($posts)[$i];?>
-      <li><h2>Post pubblicati il <?php echo $current_date; ?></h2></li> 
-      <?php
-      for ($j = 0; $j < count($posts[$current_date]); $j++) {
-        $current_post = $posts[$current_date][$j];
-    ?>
-        <li>
-          <h3><?php echo $current_post['title']; ?></h3>
-          <h4><?php echo $current_post['author']; ?></h4>
-          <p><?php echo $current_post['text']; ?></p>
-        </li>
-      <?php } ?>
+      $current_date = array_keys($posts)[$i]; ?>
+      <li>
+        <h2>Post pubblicati il <?php echo $current_date; ?></h2>
+        <?php
+        for ($j = 0; $j < count($posts[$current_date]); $j++) {
+          $current_post = $posts[$current_date][$j];
+        ?>
+          <ul>
+            <li>
+              <h3><?php echo $current_post['title']; ?></h3>
+              <h4><?php echo $current_post['author']; ?></h4>
+              <p><?php echo $current_post['text']; ?></p>
+            </li>
+          </ul>
+        <?php } ?>
+      </li>
     <?php
     }
     ?>
